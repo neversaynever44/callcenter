@@ -1,0 +1,188 @@
+.contacts
+	color: #FFF
+	font-size: 0
+	+r(991)
+		margin-top: 0
+		background-image: linear-gradient(to right, #40081b 0%, #71132b 50%, #943030 100%)
+	&__info,
+	&__map
+		display: inline-block
+		vertical-align: top
+		width: 50%
+		+r(991)
+			display: block
+			width: 100%
+		+r(480)
+			padding: 0
+	&__map
+		text-align: center
+	&__list
+		+clr
+		+r(991)
+			max-width: 450px
+			margin: auto
+	.intro
+		margin-bottom: 40px
+.contacts__list-item
+	float: left
+	width: 50%
+	padding: 0 6px
+	&:not(:last-child)
+		margin-bottom: 36px
+.contact
+	&__city
+		letter-spacing: 0.35px
+		font-size: 14px
+		+Roman
+		margin-bottom: 10px
+	&__link
+		display: inline-block
+		color: #fff
+		text-decoration: none
+		font-size: 20px
+		font-weight: 400
+		position: relative
+		line-height: 29px
+		+r(480)
+			font-size: 14px
+		&:before
+			content: ""
+			position: absolute
+			width: 100%
+			height: 2px
+			bottom: 1px
+			left: 0
+			background-color: #fff
+			visibility: hidden
+			+scale(0)
+			+tr(all .3s ease)
+		&:hover
+			&:before
+				+scale(1)
+				visibility: visible
+			
+// form
+.form-group
+	position: relative
+.form
+	&__input,
+	&__label
+		display: block
+		outline: 0
+		color: #FFF
+		background: transparent
+		font-size: 15px
+		letter-spacing: 0.38px
+		+Light
+		border: 0
+		width: 100%
+		line-height: 1
+	&__input
+		border-bottom: 1px solid rgba(255,255,255, 0.33)
+		padding: 5px 0
+	&__input
+		~.form__border
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 100%
+			height: 2px
+			z-index: 99
+			&:before,
+			&:after
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 0
+				height: 100%
+				background-color: #FFF
+				transition: 0.4s
+			&:after
+				left: auto
+				right: 0
+		&:focus
+			~.form__border
+				&:before,
+				&:after
+					width: 50%
+					transition: 0.4s
+.order	
+	&__form
+		max-width: 726px
+		width: 100%
+		margin: 24px auto 60px
+		box-shadow: 17px 29px 27px rgba(27, 40, 58, 0.05)
+		border-radius: 6px
+		background-color: #ae3c47
+		padding: 26px 30px 50px 28px
+		color: #fff
+		position: relative
+		+clr
+		+r(767)
+			max-width: 500px
+			margin: 30px auto
+		+r(480)
+			padding: 20px
+		&:before
+			position: absolute
+			content: ""
+			top: 1px
+			left: 6px
+			width: 0
+			height: 0
+			border-left: 355px solid transparent
+			border-right: 360px solid transparent
+			border-top: 205px solid #b7424d
+			+r(767)
+				display: none
+		h4
+			font-size: 20px
+			position: relative
+			+Medium
+			margin-bottom: 35px
+			+r(480)
+				margin-bottom: 18px
+	&__row
+		+clr
+		margin: 0 -15px
+	&__fields
+		margin-bottom: 30px
+		position: relative
+	&__footer
+		text-align: right
+		+r(480)
+			text-align: center
+	&__button
+		outline: 0
+		box-shadow: 0 3px 5px rgba(51, 51, 51, 0.07)
+		border-radius: 4px
+		background-color: #ffd364
+		+Bold
+		font-size: 15px
+		color: #353535
+		letter-spacing: 0.16px
+		padding: 13px 20px
+		max-width: 222px
+		text-transform: uppercase
+		width: 100%
+		+tr(all .3s ease)
+		&:hover
+			background-color: white
+		&:active
+			position: relative
+			top: 2px
+
+.order__col-6,
+.order__col-12
+	float: left
+	padding: 0 15px
+.order__col-6
+	width: 50%
+	margin-bottom: 20px
+	+r(480)
+		width: 100%
+.order__col-12
+	width: 100%
+
+

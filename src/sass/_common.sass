@@ -1,0 +1,405 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+// 			+s(codedby) 
+// ## gradient example
+//     	+g(#232323, #5c5c5c);
+//	   horizontal
+//     	+gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +r(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts
+// Save fonts to /src/fonts
+// +font(book, cytiapro-black-webfont)
+// and create mixin
+// =book
+// 	font-family: "book", Arial, sans-serif
+
+body
+	font-family: Arial, sans-serif
+	font-size: 14px
+	line-height: 1.4
+	&.is-hidden
+		overflow: hidden
+	
+
+// VARS
+$BLACK: #262626
+$ORANGE: #cc4012
+$background: #e74c3c
+$select-color: #fff
+$select-background: #cf2f2e
+$select-width: 120px
+$select-height: 40px 
+// common blocks
+%inner
+	max-width: 1126px
+	padding: 0 10px
+	width: 100%
+	margin: auto
+	+clr
+	position: relative
+	+r(767)
+		max-width: 480px
+	+r(480)
+		max-width: 320px
+.inner
+	@extend %inner
+
+.bordered
+	border-top: 1px solid rgba(0,0,0,0.1)
+	padding-top: 54px
+	+r(480)
+		padding-top: 25px
+
+.text-c
+	text-align: center
+img
+	max-width: 100%
+	max-height: 100%
+	height: auto
+// titles
+.intro
+	text-align: center
+	.icon
+		margin-bottom: 24px
+		+r(480)
+			margin-bottom: 15px
+	&__title
+		opacity: 0.9
+		color: $BLACK
+		font-size: 37px
+		// line-height: 17.28px
+		line-height: 1
+		margin-bottom: 44px
+		letter-spacing: 0.19px
+		+r(767)
+			margin-bottom: 24px
+			font-size: 25px
+	&__main
+		padding-bottom: 50px
+		+r(767)
+			padding-bottom: 25px
+.intro__subtitle,
+.jobs__subtitle
+	color: rgba(91, 96, 107, 0.8)
+	+Roman
+	font-size: 20px
+	max-width: 575px
+	margin: 0 auto 60px
+	text-align: center
+	line-height: 33px
+	+r(767)
+		margin: 0 auto 30px
+	+r(480)
+		font-size: 14px
+		margin: 0 auto 15px
+
+.intro__subtitle,
+.jobs__subtitle,
+.services__subtitle
+	+r(767)
+		font-size: 16px
+
+
+.intro__title,
+.h3,
+.h4
+	+Medium
+.h3
+	text-align: center
+	color: $ORANGE
+	margin-bottom: 54px
+	font-size: 25px
+	line-height: 17.28px
+	+r(480)
+		font-size: 18px
+		margin-bottom: 35px
+.h4,
+.h5
+	line-height: 20.28px
+.h4
+	font-size: 21px
+	color: $BLACK
+	margin-bottom: 20px
+	+r(767)
+		margin-bottom: 14px
+		font-size: 18px
+	+r(480)
+		margin-bottom: 7px
+.h5
+	+Bold
+	font-size: 16px
+	color: rgba(38, 38, 38, 0.9)
+	margin-bottom: 14px
+	+r(480)
+		margin-bottom: 5px
+
+
+// btns
+.btn-more
+	color: $BLACK
+	+Medium
+	font-size: 13px
+	letter-spacing: 0.07px
+	position: relative
+	display: inline-block
+	&:before
+		content: ''
+		z-index: 1
+		display: block
+		width: 100%
+		background-color: #ffb822
+		height: 2px
+		position: absolute
+		left: 0
+		right: 0
+		margin: auto
+		bottom: -8px
+		+tr(bottom .3s ease)
+	&:hover
+		opacity: 0.8
+		&:before
+			bottom: 7px
+.btn-more,
+.btn
+	text-decoration: none
+	text-transform: uppercase
+	text-align: center
+	line-height: 17.28px
+	+tr(all .3s ease)
+	z-index: 111
+
+
+.btn
+	box-shadow: 0 3px 5px rgba(51, 51, 51, 0.07)
+	border-radius: 4px
+	background-color: #ffd364
+	+Bold
+	font-size: 15px
+	color: #353535
+	letter-spacing: 0.16px
+	display: block
+	max-width: 190px
+	width: 100%
+	margin: auto
+	padding: 15px 20px
+	position: relative
+	&:after
+		content: ""
+		position: absolute
+		top: 0
+		left: -10px
+		width: 110%
+		height: 100%
+		z-index: 100
+		background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.5)), color-stop(77%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0))) no-repeat -6em 0%
+		background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 77%, rgba(255, 255, 255, 0) 100%) no-repeat -6em 0%
+		background: linear-gradient(to left, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 77%, rgba(255, 255, 255, 0) 100%) no-repeat -6em 0%
+		background-size: 4em 100%
+		-webkit-transform: skewX(-20deg)
+		-ms-transform: skewX(-20deg)
+		transform: skewX(-20deg)
+	&:hover
+		background-color: #ec5523
+		color: #fff
+		&:after
+			+tr(all 1.3s linear)
+			background-position: 150% 0%
+		&:active
+			top: 2px
+	+r(480)
+		padding: 13px 10px
+
+.color-wh
+	color: white
+
+// col
+.col
+	+clr
+	width: 100%
+	position: relative
+	&__left,
+	&__right
+		float: left
+		width: 50%
+
+
+// icons
+.icon-fb,
+.icon-tw,
+.icon-in
+	font-size: 26px
+	color: white
+.icon-in
+	font-size: 16px
+.icon-up
+	vertical-align: middle
+	color: white
+	font-size: 16px
+
+.icon-about
+	+s(icon-about)
+.icon-media
+	+s(icon-media)
+.icon-services
+	+s(icon-service)
+.icon-career
+	+s(icon-career)
+.icon-reviews
+	+s(icon-reviews)
+.icon-contact
+	+s(icon-contact)
+.icon-about1
+	+s(about1)
+.icon-about2
+	+s(about2)
+.icon-about3
+	+s(about3)
+
+
+.icon-author1
+	+s(author1)
+
+.icon-author2
+	+s(author2)
+
+.icon-author3
+	+s(author3)
+
+// .icon-arrowLeft,
+// .icon-arrowRight
+// 	font-size: 40px
+// 	color: #e65d11
+// 	display: none
+// 	+r(480)
+// 		display: block
+
+
+
+
+.overlay,
+.arrow
+	position: fixed
+	opacity: 0
+	visibility: hidden
+	+tr(all .3s ease)
+
+
+// overlay
+.overlay
+	z-index: 1111
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(255, 105, 0, 0.5)
+	&.is-active
+		opacity: 1
+		visibility: visible
+// anchor
+.arrow
+	bottom: 60px
+	right: 5%
+	width: 40px
+	height: 40px
+	background-color: #ff6900
+	border-radius: 50%
+	-moz-border-radius: 50%
+	-ms-border-radius: 50%
+	-o-border-radius: 50%
+	-webkit-border-radius: 50%
+	z-index: 1111
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.26), 0 0 16px rgba(0, 0, 0, 0.25)
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.26), 0 0 16px rgba(0, 0, 0, 0.25)
+	+vertical
+	&:hover
+		background-color: rgba(255,255,255, 1)
+		.icon-up
+			color: #ff6900
+	&.is-show
+		opacity: 1
+		visibility: visible
+	&:active
+		bottom: 58px
+
+// js-select
+.select 
+	cursor: pointer
+	display: inline-block
+	position: relative
+	font-size: 16px
+	color: $select-color
+	width: $select-width
+	height: $select-height
+
+.select-styled 
+	+Roman
+	font-size: 17px
+	position: absolute 
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	padding: 7px 10px
+	+tr(all 0.2s ease-in)
+	&:after 
+		content: ""
+		width: 0
+		height: 0
+		border: 5px solid transparent
+		border-color: $select-color transparent transparent transparent
+		position: absolute
+		top: 16px
+		right: 10px
+	&:hover 
+		background-color: darken($select-background, 2)
+	&:active, 
+	&.is-active
+		background-color: darken($select-background, 5)
+		&:after 
+			top: 9px
+			border-color: transparent transparent $select-color transparent
+    
+  
+.select-options 
+	display: none 
+	position: absolute
+	top: 100%
+	right: 0
+	left: 0
+	z-index: 999
+	background-color: darken($select-background, 5)
+	li 
+		padding: 10px 0
+		text-indent: 15px
+		border-top: 1px solid darken($select-background, 10)
+		+tr(all 0.15s ease-in)
+		&:hover 
+			color: $select-background
+			background: $select-color
+		&[rel="hide"] 
+			display: none
+
+@keyframes slide-down 
+	0% 
+		opacity: 0
+		transform: translateY(-100%)
+	100% 
+		opacity: 0.9
+		transform: translateY(0)

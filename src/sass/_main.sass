@@ -1,0 +1,279 @@
+// Normally mainpage styles
+.advantages__list-item,
+.promo__item,
+.services__list-item
+	display: inline-block
+	vertical-align: top
+	position: relative
+
+.header,
+.services,
+.reviews,
+.contacts,
+.footer
+	position: relative
+	width: 100%
+.services,
+.reviews,
+.contacts
+	padding: 100px 0
+
+.about,
+.media,
+.services,
+.vacancy,
+.jobs,
+.advantages,
+.reviews,
+.contacts,
+.footer
+	+r(991)
+		padding: 45px 0
+	+r(480)
+		padding: 30px 0
+
+
+
+.layout
+	position: absolute
+	width: 100%
+	height: 100%
+	left: 0
+	bottom: 0
+	transform: skewY(-10.5deg)
+	+r(991)
+		display: none
+	&__1
+		height: 200%
+		background: linear-gradient(to right, #cd2a30 0%, #f59a09 100%)
+	&__2
+		background: #4f396a
+	&__3
+		background: #f1f4f6
+	&__4
+		background: linear-gradient(to right, #40081b 0%, #71132b 50%, #943030 100%)
+	&__footer
+		background: #f1f4f6
+
+
+.promo__item
+	+r(1350)
+		vertical-align: middle
+
+.about__list-item,
+.media__list-item,
+.vacancy__list-item
+	float: left
+	width: 31.33%
+	margin-left: 2%
+	position: relative
+
+.about__list-item,
+.vacancy__list-item
+	+r(767)
+		width: 100%
+		margin-left: 0
+		float: none
+
+
+.career
+	margin-bottom: 100px
+	+r(991)
+		margin-bottom: 0
+		padding-top: 45px
+	+r(480)
+		padding-top: 30px
+
+// VACANCY
+.vacancy
+	padding-bottom: 70px
+	&__list
+		font-size: 0
+		margin: 0 0 43px -2%
+		+clr
+		+r(767)
+			max-width: 300px
+			margin: 0 auto 40px
+	&__subtitle
+		color: rgba(110, 113, 121, 0.8)
+		+Roman
+		font-size: 15px
+		letter-spacing: 0.38px
+		max-width: 692px
+		margin: 0 auto 46px
+		text-align: center
+		+r(767)
+			text-align: left
+.vacancy__list-item
+	+r(767)
+		&:not(:last-child)
+			margin-bottom: 20px
+	&:after
+		content: ''
+		z-index: 1
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		+s(profile)
+.vacancy__list-content
+	padding-left: 38px
+	position: relative
+	h4
+		+r(902)
+			min-height: 40px
+		+r(767)
+			min-height: auto
+	p
+		color: #6e7179
+		font-size: 15px
+		letter-spacing: 0.38px
+		+Roman
+		line-height: 23px
+		max-width: 299px
+
+// JOBS
+.jobs__subtitle
+	max-width: 595px
+
+.jobs
+	.h3
+		font-size: 23px
+
+
+// ADVANTAGES
+.advantages
+	&__list
+		font-size: 0
+		+r(991)
+			max-width: 600px
+			margin: 0 auto 40px
+		+r(480)
+			max-width: 300px
+	&__list1
+		.advantages__list-item
+			width: 100%
+			padding: 0
+			&:not(:last-child)
+				margin-bottom: 0
+		+r(767)
+			max-width: 170px
+			margin: 10px auto
+		+r(480)
+			max-width: 170px
+	&__subtitle
+		margin-bottom: 64px
+		+Roman
+		color: rgba(91, 96, 107, 0.8)
+		font-size: 21px
+		text-align: center
+.advantages__list-item
+	width: 25%
+	padding: 0 10px
+	+r(991)
+		width: 50%
+	+r(480)
+		width: 100%
+	&:not(:last-child)
+		margin-bottom: 50px
+		+r(767)
+			margin-bottom: 30px
+		+r(480)
+			margin-bottom: 15px
+.advantages__list-content
+	position: relative
+	padding-left: 40px
+	&:before
+		content: ''
+		z-index: 1
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		+s(done)
+	p
+		color: #6e7179
+		+Roman
+		font-size: 15px
+		letter-spacing: 0.38px
+
+
+// slider
+.js-slider1,
+.js-slider2
+	opacity: 0
+	visibility: hidden
+	+tr(all .3s ease)
+	&.is-ready
+		opacity: 1
+		visibility: visible	
+
+.slider-wrp
+	position: relative
+	overflow: hidden
+.slider
+	margin-bottom: 35px
+	.slick-list
+		padding: 10px 60px
+	+r(480)
+		padding-bottom: 45px
+	&__item
+		+tr(padding-top .3s ease)
+		margin: 0 10px
+		&:nth-of-type(even)
+			padding-top: 30px
+			+r(480)
+				padding-top: 15px
+	&__pic
+		margin-bottom: 28px
+		+r(767)
+			margin-bottom: 14px
+			img
+				width: 100%
+		+r(480)
+	&__desc
+		h4
+			color: $BLACK
+			+Bold
+			letter-spacing: 0.35px
+		p
+			color: #6e7179
+			+Roman
+
+// slider-arrows
+.arrows
+	+hide-text
+	max-width: 60px
+	width: 100%
+	// background-color: hsla(166, 100%, 100%, 0.9)
+	height: 100%
+	top: 0
+	z-index: 1111
+	position: absolute
+	cursor: pointer
+	background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.93) 70%, rgba(255, 255, 255, 0.9) 89%)
+.js-prev1,
+.js-prev2
+	left: 0
+.js-next1,
+.js-next2
+	right: 0
+
+.js-prev2,
+.js-next2
+	background: linear-gradient(90deg, rgba(241, 243, 246, 0) 0%, #f1f3f6 77%)
+	max-width: 100%
+	transform: translate(0, -50%)
+	width: 70px
+	top: 170px
+	+r(480)
+		width: 15px
+.js-prev2
+	left: -6px
+
+
+.js-next2
+	right: -8px
+
+
+

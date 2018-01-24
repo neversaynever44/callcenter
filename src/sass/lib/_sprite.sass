@@ -1,0 +1,163 @@
+$icons: (0:0)
+$icons: map-merge($icons,(about1: (X: 0px, Y:-235px, W: 45px, H: 49px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(about2: (X: -303px, Y:0px, W: 39px, H: 50px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(about3: (X: -249px, Y:-165px, W: 46px, H: 48px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(author1: (X: -249px, Y:-55px, W: 50px, H: 51px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(author2: (X: -249px, Y:0px, W: 50px, H: 51px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(author3: (X: -249px, Y:-110px, W: 50px, H: 51px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(blockquote: (X: -303px, Y:-54px, W: 31px, H: 22px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(done: (X: -303px, Y:-80px, W: 21px, H: 21px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-about: (X: 0px, Y:-165px, W: 65px, H: 66px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-career: (X: -99px, Y:-83px, W: 66px, H: 66px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-contact: (X: -139px, Y:-165px, W: 65px, H: 65px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-media: (X: -179px, Y:-70px, W: 66px, H: 65px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-reviews: (X: -69px, Y:-165px, W: 66px, H: 65px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(icon-service: (X: -179px, Y:0px, W: 66px, H: 66px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(profile: (X: -303px, Y:-105px, W: 20px, H: 21px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(service1: (X: 0px, Y:0px, W: 95px, H: 78px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(service2: (X: -99px, Y:0px, W: 76px, H: 79px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+$icons: map-merge($icons,(service3: (X: 0px, Y:-82px, W: 78px, H: 79px, TW: 342px, TH: 284px, IMG: '../img/icons.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+	$icon: map-get($icons, $icon)
+	@return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	width: icon-attr($iconName, W)
+	height: icon-attr($iconName, H)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+	background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+	background-image: url(icon-attr($iconName, IMG))
+	$width: icon-attr($iconName, W)
+	$height: icon-attr($iconName, H)
+	width: $width/2
+	height: $height/2
+	$x: icon-attr($iconName, X)
+	$y: icon-attr($iconName, Y)
+	background-position: $x/2 $y/2
+	$tw: icon-attr($iconName, TW) 	
+	$th: icon-attr($iconName, TH)
+	background-size: $tw/2 $th/2  	
+
+
+@mixin s($i)
+	+sprite($i)
+@mixin sp($i)
+	+sprite-position($i)
+@mixin sr($i)
+	+sprite-retina($i)	
+
+//
+//.icon-about1
+//	width: 45px
+//	height: 49px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -235px
+//
+//.icon-about2
+//	width: 39px
+//	height: 50px
+//	background-image: url('../img/icons.png')
+//	background-position: -303px 0px
+//
+//.icon-about3
+//	width: 46px
+//	height: 48px
+//	background-image: url('../img/icons.png')
+//	background-position: -249px -165px
+//
+//.icon-author1
+//	width: 50px
+//	height: 51px
+//	background-image: url('../img/icons.png')
+//	background-position: -249px -55px
+//
+//.icon-author2
+//	width: 50px
+//	height: 51px
+//	background-image: url('../img/icons.png')
+//	background-position: -249px 0px
+//
+//.icon-author3
+//	width: 50px
+//	height: 51px
+//	background-image: url('../img/icons.png')
+//	background-position: -249px -110px
+//
+//.icon-blockquote
+//	width: 31px
+//	height: 22px
+//	background-image: url('../img/icons.png')
+//	background-position: -303px -54px
+//
+//.icon-done
+//	width: 21px
+//	height: 21px
+//	background-image: url('../img/icons.png')
+//	background-position: -303px -80px
+//
+//.icon-icon-about
+//	width: 65px
+//	height: 66px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -165px
+//
+//.icon-icon-career
+//	width: 66px
+//	height: 66px
+//	background-image: url('../img/icons.png')
+//	background-position: -99px -83px
+//
+//.icon-icon-contact
+//	width: 65px
+//	height: 65px
+//	background-image: url('../img/icons.png')
+//	background-position: -139px -165px
+//
+//.icon-icon-media
+//	width: 66px
+//	height: 65px
+//	background-image: url('../img/icons.png')
+//	background-position: -179px -70px
+//
+//.icon-icon-reviews
+//	width: 66px
+//	height: 65px
+//	background-image: url('../img/icons.png')
+//	background-position: -69px -165px
+//
+//.icon-icon-service
+//	width: 66px
+//	height: 66px
+//	background-image: url('../img/icons.png')
+//	background-position: -179px 0px
+//
+//.icon-profile
+//	width: 20px
+//	height: 21px
+//	background-image: url('../img/icons.png')
+//	background-position: -303px -105px
+//
+//.icon-service1
+//	width: 95px
+//	height: 78px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px 0px
+//
+//.icon-service2
+//	width: 76px
+//	height: 79px
+//	background-image: url('../img/icons.png')
+//	background-position: -99px 0px
+//
+//.icon-service3
+//	width: 78px
+//	height: 79px
+//	background-image: url('../img/icons.png')
+//	background-position: 0px -82px
+//

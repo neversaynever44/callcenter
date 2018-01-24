@@ -1,0 +1,96 @@
+.services
+	color: #FFF
+	text-align: center
+	margin-bottom: 100px
+	+r(991)
+		background: #4f396a
+		margin: 0
+		min-height: auto
+	&__subtitle
+		color: rgba(255,255,255, 0.7)
+		font-size: 20px
+		+Roman
+		text-align: center
+		margin-bottom: 60px
+	&__list
+		font-size: 0
+		text-align: center
+		position: relative
+		margin-bottom: 66px
+		+r(991)
+			margin-bottom: 30px
+		&:before,
+		&:after
+			z-index: 1
+			display: block
+			position: absolute
+			top: 15%
+			font-size: 45px
+			+Medium
+			line-height: 1
+			color: rgba(206, 208, 228, 0.2)
+			+r(991)
+				display: none
+		&:before
+			left: 0
+			content: '{'
+		&:after
+			right: 0
+			content: '}'
+.services__list-item
+	width: 33.33%
+	+r(991)
+		width: 50%
+		margin: 30px auto
+	+r(767)
+		width: 100%
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		border: 15px solid rgba(255,255,255, 0.05)
+		width: 215px
+		height: 215px
+		border-radius: 50%
+		top: -28px
+		left: 0
+		right: 0
+		margin: auto
+		+r(767)
+			width: 190px
+			height: 190px
+.service
+	box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.08)
+	background-color: #6b5383
+	border-radius: 50%
+	width: 160px
+	height: 160px
+	margin: 0 auto 40px
+	+vertical
+	+r(767)
+		width: 130px
+		height: 130px
+	
+.service__icon
+	margin: auto
+	display: inline-block
+	vertical-align: middle
+.service__icon-1
+	+s(service1)
+.service__icon-2
+	+s(service2)
+.service__icon-3
+	+s(service3)	
+.description
+	max-width: 300px
+	margin: auto
+	h4
+		color: white
+	p
+		color: rgba(255,255,255, 0.6)
+		font-size: 15px
+		+Roman
+		letter-spacing: 0.38px
+
+
+

@@ -1,0 +1,72 @@
+.about
+	width: 100%
+	padding: 60px 0
+	margin-bottom: 100px
+	+r(991)
+		background: none
+		margin-bottom: 0
+	&__intro
+		background: url(../img/bg/about.png)
+		+cover
+		min-height: 295px
+		margin-bottom: 70px
+		box-shadow: 13px 12px 80px 2px rgba(0, 0, 0, 0.05)
+		// position: relative
+		// top: -44px
+		+r(991)
+			min-height: 180px
+		+r(767)
+			margin-bottom: 40px
+			// position: static
+			// top: auto
+	&__list
+		font-size: 0
+		+clr
+		margin: 0 0 56px -2%
+		+r(767)
+			margin: 20px auto
+			max-width: 400px
+
+.about__list-item
+	+r(767)
+		&:not(:last-child)
+			margin-bottom: 30px
+			+r(480)
+				margin-bottom: 15px
+	&:before
+		content: ''
+		z-index: 1
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		margin: auto
+		+r(767)
+			right: 0
+	&:nth-of-type(1)
+		&:before
+			+s(about1)
+	&:nth-of-type(2)
+		&:before
+			+s(about2)
+	&:nth-of-type(3)
+		&:before
+			+s(about3)
+.about__list-icon
+	margin-bottom: 25px
+.about__list-desc
+	text-align: left
+	padding-top: 70px
+	+r(767)
+		text-align: center
+	h4
+		margin-bottom: 16px
+	p
+		color: #6a6c73
+		+Roman
+		font-size: 15px
+		line-height: 30px
+		letter-spacing: 0.38px
+		max-width: 312px
+		+r(767)
+			max-width: 100%
